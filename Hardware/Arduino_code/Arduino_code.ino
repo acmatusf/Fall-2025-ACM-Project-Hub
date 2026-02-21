@@ -42,6 +42,21 @@ void loop()
   if (!Serial.available())
     return;
 
+  // check if we're only opening/closing the gripper
+  char cmd = Serial.peek();
+  if (cmd == 'G') 
+  {
+    Serial.read(); // consume 'G'
+    int gripperAngle = Serial.parseInt();
+    if (Serial.read() == '\n') 
+    {
+      gripperAngle = constrain(gripperAngle, 0, 180);
+      int gripperPWM = map(gripperAngle, 0, 180, 10, 450);
+      HCPCA9685.Servo(0, gripperPWM);
+    }
+    return;
+  }
+
   // read 5 servo angles and 1 signed step delta (space-separated)
   int angle1 = Serial.parseInt();      // Gripper
   int angle2 = Serial.parseInt();      // Wrist 2
@@ -69,13 +84,14 @@ void loop()
     Elbow:     10 -> 400
     Shoulders: 10 -> 400
   */
+  // if servos' movement is inverted invert the angles (e.g. angle1 -> 180 - angle1 and vice versa)
   int gripperPWM   = map(angle1, 0, 180, 10, 450);
   int wrist2PWM    = map(angle2, 0, 180, 10, 450);
   int wrist1PWM    = map(180 - angle3, 0, 180, 10, 340);
   int elbowPWM     = map(angle4, 0, 180, 10, 400);
-  int shoulderPWM  = map(angle5, 0, 180, 10, 400);
+  int shoulderPWM  = map(180 - angle5, 0, 180, 10, 400);
   // mirrored shoulder (servo 6)
-  int shoulderMirrorPWM = map(180 - angle5, 0, 180, 10, 400);
+  int shoulderMirrorPWM = map(angle5, 0, 180, 10, 400);
   // map stepper slider to absolute step position
   targetStep = map(stepSlider, 0, 270, 0, STEPS_MAX);
 

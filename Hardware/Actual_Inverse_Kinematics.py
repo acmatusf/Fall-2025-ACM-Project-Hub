@@ -133,7 +133,7 @@ def _send_packet(servo_vals, stepper_val):
     ser.write(data.encode())
 
 last_sent = 0
-last_base_value = 0.0  # radians
+last_base_value = 0.0 # radians
 def send_all_motors(angle1, angle2, angle3, angle4, angle5, value):
     global last_sent, last_base_value
     # slightly delay motors to prevent jagged movement
@@ -187,7 +187,6 @@ def send_all_motors(angle1, angle2, angle3, angle4, angle5, value):
 
 
 # Now we'll wrap up some of these calls into a couple of functions. Calling move(x,y,z) will move us to the new coordinates and update the plot.
-# 
 # It's worth noting here that when we call inverse_kinematics, we pass in the old position (joint angles) as initial_position so IKPY find the nearest solution to our current position.
 
 # In[10]:
@@ -224,9 +223,11 @@ def move(x, y, z):
 
 # In[19]:
 
-
-#move(0.3, -0.1, 0.8)
-#move(0, -0.1, 0.8)
+move(0.2, 0, 0.8)
+time.sleep(5)
+move(-0.2, 0.1, 0.8)
+time.sleep(5)
+move(0, -0.1, 0.8)
 
 
 # In[46]:
