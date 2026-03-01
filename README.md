@@ -31,15 +31,22 @@ Step 4: Run a simple Arduino sketch (that you can write yourself or pull a sampl
 
 Step 5: Once you're done testing, assemble the circuit according to this [Tutorial here](https://smartbuilds.io/diy-robot-arm-arduino-hand-gestures/). To power all 6 servos at once, you must use a 11.1V LiPo battery with the UBEC (in the budget list) in between.
 
-Step 6: Open an IDE of your choice (e.g. VS Code) and setup a Python virtual environment and install the necessary libraries/packages using ```pip install -r requirements.txt```. Test if all motors are working fine using the code from slider.py.
+Step 6: Open an IDE of your choice (e.g. VS Code) and setup a Python virtual environment and install the necessary libraries/packages using ```pip install -r requirements.txt```. Test if all motors are working fine using the code from ```slider.py```.
 
-Step 7: Open JupyterLab (through Anaconda Navigator for example) and install the necessary libraries/packages again using ```!conda env create -f environment.yml``` (run using a Jupyter Cell). Afterwards test if inverse kinematics is working properly using the code from Test_Inverse_Kinematics.ipynb. If you need further help this [Tutorial](https://www.youtube.com/watch?v=XDSzbJAwJKA) can help.
+Step 7: Open JupyterLab (through Anaconda Navigator for example) and install the necessary libraries/packages again using ```!conda env create -f environment.yml``` (run inside a Jupyter Cell). Afterwards test if inverse kinematics is working properly using the code from ```Test_Inverse_Kinematics.ipynb```. If you need further help this [Tutorial](https://www.youtube.com/watch?v=XDSzbJAwJKA) can help.
 
-Step 8: Once you've confirmed that the inverse kinematics code works properly, run the Actual_Inverse_Kinematics.ipynb code to test whether the arm moves correctly as well. The Arduino code is already given so check it out if you want. If for some reason the dimensions of your arm and/or the rotate range of the joints is different, update the actual_arm_urdf.urdf file and the corresponding code as well. Note that the Actual_Inverse_Kinematics.py file is there simply to eliminate the need to open JupyterLab all the time to run the code.
+Step 8: Once you've confirmed that the inverse kinematics code works properly, run the ```Actual_Inverse_Kinematics.ipynb``` code to test whether the arm moves correctly as well. The Arduino code is already given so check it out if you want. If for some reason the dimensions of your arm and/or the rotate range of the joints is different, update the ```actual_arm_urdf.urdf``` file and the corresponding code as well. Note that the ```Actual_Inverse_Kinematics.py``` file is there simply to eliminate the need to open JupyterLab all the time to run the code.
 
 Step 9: Now that the hardware portion is done, time to move on to the software portion. First test out the tracking model in test.py to see if it's accurately tracking your hand and returning the desired coordinates. Optionally change the delay between each recording of the arm's coordinates and/or claw tracking to your liking.
 
-Step 10: Finally, run the complete program using the code from Complete_arm_control_code.py and congrats! You now have a robotic arm that moves according to your hand and can open/close the gripper from your hand gestures.
+Step 10: Finally, run the complete program using the code from ```Complete_arm_control_code.py``` and congrats! You now have a robotic arm that moves according to your hand and can open/close the gripper from your hand gestures.
+
+## How To Run The Software
+1. Connect the Arduino to your computer via USB cable. Then, open the ```/Software``` folder and open the ```Complete_arm_control_code.py``` file, which is the code of our robotic arm operation.
+2. Run ```pip install -r requirements.txt``` in the terminal. This will install every library needed for the complete operation of the robot listed in the ```requirements.txt``` file.
+3. Now to start the operation of the robotic arm, you can run the ```Complete_arm_control_code.py``` file. When it launches, two instructions will appear on the top of the camera frame: "MOVE HAND FAR" and "MOVE HAND CLOSE". This is the calibration stage of the software. So when prompted, move your hand as far away from the camera you can without moving your shoulder excessively, same thing with close to the camera. After that, "CALIBRATION DONE" should appear on the screen. If it is felt that the calibration wasn't done correctly, it is recommended to close and run the software again by pressing ```q``` on your keyboard.
+4. With the software calibrated, the arm should be operational if correctly set up: The code works by moving the robotic arm to the user's hand position relative to their shoulder. Also, by tracking if the index and thumb fingers of the user are touching the software defines the claw as open or closed.
+5. The software takes some time to move the robot, and it freezes every time it is happening so the robot has its needed time to move. In case the freezes are too frequent or too spaced away, modify lines 223 and 226 PLOT_EVERY_N and PLOT_EVERY_N_CLAW.
 
 ## Contributions
 
