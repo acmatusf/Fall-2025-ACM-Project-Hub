@@ -19,3 +19,10 @@ At a high level, the logic follows like this:
 
 ## How To Build And Run The Robotic Arm
 Step 1: 
+
+## How To Run The Software
+1. Connect the arduino to your computer via USB cable. Then, open the /Software folder and open the "Complete_arm_control_code.py" file, which is the code of our robotic arm operation.
+2. Run "pip install -r requirements.txt" in the terminal. This will install every library needed for the complete operation of the robot listed in the requirements.txt file.
+3. Now to start the operation of the robotic arm, you can run the "Complete_arm_control_code.py" file. When it launches, two instructions will appear on the top of the camera frame: "MOVE HAND FAR" and "MOVE HAND CLOSE". This is the calibration stage of the software. So when prompted, move your hand as far away from the camera you can without moving your shoulder excessively, same thing with close to the camera. After that, "CALIBRATION DONE" should appear on the screen. If it is felt that the calibration wasn't done correctly, it is reccomended to close and run the software again.
+4. With the software calibrated, the arm should be operational if correctly setted up: The code works by moving the robotic arm to the user's hand position relative to their shoulder. Also, by tracking if the index and thumb fingers of the user are touching the software defines the claw as open or closed.
+5. The software takes some time to move the robot, and it freezes everytime it is happening so the robot has its needed time to move. In case the freezes are too frequent or too spaced away, modify lines 223 and 226 PLOT_EVERY_N and PLOT_EVERY_N_CLAW.
