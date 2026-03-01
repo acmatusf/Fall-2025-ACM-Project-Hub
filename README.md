@@ -18,4 +18,25 @@ At a high level, the logic follows like this:
 5. Due to certain physical limitations (which will be explained more within the code), the arm will take some time to move to its designated position, thus resulting in the occasional frame freezes above. The logic for opening and closing the claw/gripper follows similarly, but with a lower wait time and no delay.
 
 ## How To Build And Run The Robotic Arm
-Step 1: 
+Step 1: Get all the necessary items to build the arm from here: [Budget list](https://docs.google.com/spreadsheets/d/1uxJGKECmyGAl8QNd6KDAllocNuYVkL5isB1ABSVi34I/edit?usp=sharing). Remember to check out each item's functionality before you begin assembling.
+
+Step 2: 3D print the robotic arm (expect a lot of things to break so prepare lots of spare materials for printing):
+- [Gripper](https://www.thingiverse.com/thing:1748596)
+- [Base](https://www.thingiverse.com/thing:1750025)
+- [Arm](https://www.thingiverse.com/thing:1838120)
+
+Step 3: Assemble the arm following the instructions given in the Thingiverse links in step 2. You can use glue to fix the elbow and wrist 1 joints in place as there currently doesn't seem to have any screws to fix it in place. You can also choose to fix the base in place by installing 5 screws down to a platform (like a wooden board) to position the arm in 1 place, however if you choose not to do so (like we did) note that you'll have to hold the arm's base with something to stop it from falling over.
+
+Step 4: Run a simple Arduino sketch (that you can write yourself or pull a sample one online) to test out each motor's rotate range and (optionally) manually change them to make the arm move within your desired range. For this step you can use the 5V battery pack for the servos, but for the stepper motor you have to connect it to the A4988, set the Vref to a suitable number ([Tutorial here](https://www.youtube.com/watch?v=OpaUwWouyE0)), before supplying power to it using a 11.1V LiPo battery.
+
+Step 5: Once you're done testing, assemble the circuit according to this [Tutorial here](https://smartbuilds.io/diy-robot-arm-arduino-hand-gestures/). To power all 6 servos at once, you must use a 11.1V LiPo battery with the UBEC (in the budget list) in between.
+
+Step 6: Open an IDE of your choice (e.g. VS Code) and setup a Python virtual environment and install the necessary libraries/packages using ```pip install -r requirements.txt```. Test if all motors are working fine using the code from slider.py.
+
+Step 7: Open JupyterLab (through Anaconda Navigator for example) and install the necessary libraries/packages again using ```!conda env create -f environment.yml``` (run using a Jupyter Cell). Afterwards test if inverse kinematics is working properly using the code from Test_Inverse_Kinematics.ipynb. If you need further help this [Tutorial](https://www.youtube.com/watch?v=XDSzbJAwJKA) can help.
+
+Step 8: Once you've confirmed that the inverse kinematics code works properly, run the Actual_Inverse_Kinematics.ipynb code to test whether the arm moves correctly as well. The Arduino code is already given so check it out if you want. If for some reason the dimensions of your arm and/or the rotate range of the joints is different, update the actual_arm_urdf.urdf file and the corresponding code as well. Note that the Actual_Inverse_Kinematics.py file is there simply to eliminate the need to open JupyterLab all the time to run the code.
+
+Step 9: Now that the hardware portion is done, time to move on to the software portion. First test out the tracking model to see if it's accurately tracking your hand and returning the desired coordinates. Optionally change the delay between each recording of the arm's coordinates and/or claw tracking to your liking.
+
+Step 10: Finally, run the complete program using the code from Complete_arm_control_code.py and congrats! You now have a robotic arm that moves according to your hand and can open/close the gripper from your hand gestures.
