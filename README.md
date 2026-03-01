@@ -37,7 +37,7 @@ Step 7: Open JupyterLab (through Anaconda Navigator for example) and install the
 
 Step 8: Once you've confirmed that the inverse kinematics code works properly, run the Actual_Inverse_Kinematics.ipynb code to test whether the arm moves correctly as well. The Arduino code is already given so check it out if you want. If for some reason the dimensions of your arm and/or the rotate range of the joints is different, update the actual_arm_urdf.urdf file and the corresponding code as well. Note that the Actual_Inverse_Kinematics.py file is there simply to eliminate the need to open JupyterLab all the time to run the code.
 
-Step 9: Now that the hardware portion is done, time to move on to the software portion. First test out the tracking model to see if it's accurately tracking your hand and returning the desired coordinates. Optionally change the delay between each recording of the arm's coordinates and/or claw tracking to your liking.
+Step 9: Now that the hardware portion is done, time to move on to the software portion. First test out the tracking model in test.py to see if it's accurately tracking your hand and returning the desired coordinates. Optionally change the delay between each recording of the arm's coordinates and/or claw tracking to your liking.
 
 Step 10: Finally, run the complete program using the code from Complete_arm_control_code.py and congrats! You now have a robotic arm that moves according to your hand and can open/close the gripper from your hand gestures.
 
