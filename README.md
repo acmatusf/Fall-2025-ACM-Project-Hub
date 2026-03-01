@@ -52,8 +52,15 @@ Step 10: Finally, run the complete program using the code from ```Complete_arm_c
 
 **Minh - Hardware Lead** <br />
 https://github.com/CodingMinh <br />
-- Created a comprehensive budget list to successfully receive funding for the project
-- Assembled the entire robotic arm with the help of Long - Hardware Shadow
-- Implemented inverse kinematics to control the robotic arm more easily
-- Programmed the Arduino to receive inverse kinematics input and control the robotic arm smoothly and responsively
-- Assisted Gabriel - Software Lead in bridging hand-tracking (CV/ML) with inverse kinematics to enable seamless hardware-software synchronization for the robotic arm control
+- Created a comprehensive budget list to successfully receive funding for the project.
+- Assembled the entire robotic arm with the help of Long - Hardware Shadow.
+- Implemented inverse kinematics to control the robotic arm more easily.
+- Programmed the Arduino to receive inverse kinematics input and control the robotic arm smoothly and responsively.
+- Assisted Gabriel - Software Lead in bridging hand-tracking (CV/ML) with inverse kinematics to enable seamless hardware-software synchronization for the robotic arm control.
+
+**Viet - Software Shadow** <br />
+- Developed the main codebase for ```hand-wrist-elbow-track.py``` integrating MediaPipe tracking with coordinate display system.
+- Created ```robot_arm_visualizer.py``` as a testing utility for validating robot arm positions.
+- Optimized coordinate display panels with color-coded information (red/blue for jaws, cyan for distance) and improved layout to avoid blocking camera view.
+- Fixed one critical bug in axis mapping where MediaPipe's y axis and z axis were the opposite to the robot's space coordinates, causing inverted arm movement.
+- Minor code clean up.
