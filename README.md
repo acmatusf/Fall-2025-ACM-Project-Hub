@@ -40,3 +40,13 @@ Step 8: Once you've confirmed that the inverse kinematics code works properly, r
 Step 9: Now that the hardware portion is done, time to move on to the software portion. First test out the tracking model to see if it's accurately tracking your hand and returning the desired coordinates. Optionally change the delay between each recording of the arm's coordinates and/or claw tracking to your liking.
 
 Step 10: Finally, run the complete program using the code from Complete_arm_control_code.py and congrats! You now have a robotic arm that moves according to your hand and can open/close the gripper from your hand gestures.
+
+## Contributions
+
+**Minh - Hardware Lead** <br />
+https://github.com/CodingMinh <br />
+- Created a comprehensive budget list to successfully receive funding for the project
+- Assembled the entire robotic arm with the help of Long - Hardware Shadow
+- Implemented inverse kinematics to control the robotic arm more easily
+- Programmed the Arduino to receive inverse kinematics input and control the robotic arm smoothly and responsively
+- Assisted Gabriel - Software Lead in bridging hand-tracking (CV/ML) with inverse kinematics to enable seamless hardware-software synchronization for the robotic arm control
