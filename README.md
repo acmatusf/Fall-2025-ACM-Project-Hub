@@ -58,6 +58,13 @@ https://github.com/CodingMinh <br />
 - Programmed the Arduino to receive inverse kinematics input and control the robotic arm smoothly and responsively.
 - Assisted Gabriel - Software Lead in bridging hand-tracking (CV/ML) with inverse kinematics to enable seamless hardware-software synchronization for the robotic arm control.
 
+**Gabriel - Software Lead** <br />
+https://github.com/Marquibaa <br />
+- Researched and gathered information to create the hand-arm tracking software.
+- Coded the entire tracking - robotic inverse kinematics movement pattern with help of Viet - Software Shadow.
+- Solved bugs, optimized, calibrated and improved the general functioning of the arm for smoother movements.
+- Assisted Minh - Hardware Lead in general testing and bridging and connecting the Python software with the the arduino that controls the motors.
+
 **Viet - Software Shadow** <br />
 - Developed the main codebase for ```hand-wrist-elbow-track.py``` integrating MediaPipe tracking with coordinate display system.
 - Created ```robot_arm_visualizer.py``` as a testing utility for validating robot arm positions.
