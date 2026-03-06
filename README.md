@@ -64,3 +64,9 @@ https://github.com/CodingMinh <br />
 - Optimized coordinate display panels with color-coded information (red/blue for jaws, cyan for distance) and improved layout to avoid blocking camera view.
 - Fixed one critical bug in axis mapping where MediaPipe's y axis and z axis were the opposite to the robot's space coordinates, causing inverted arm movement.
 - Minor code clean up.
+
+## TODO
+- Slow down the arm/make the arm move around smoother to prevent accidental breaking from sudden impact when moving long distances.
+- Find a better alternative to the NEMA-17 stepper motor (preferably a servo) to allow for immediate and correct rotation of the arm. Or optimize the code/math to account for the center of gravity's change so that the stepper rotates to the correct angle.
+- (Optional) For long term use upgrade the motors and 3D printed materials.
+- Improve the CV/ML code to track depth better.
