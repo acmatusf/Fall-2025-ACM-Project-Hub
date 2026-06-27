@@ -3,6 +3,10 @@
 
 For this project hub, we built a gesture controlled robotic arm, which tracks your hand using your computer's camera and commands the arm to move accordingly. In this project, we used many technologies including computer vision/machine learning, inverse kinematics, Arduino programming, and a bit of 3D printing, CAD design, and circuit design.
 
+<div align="center">
+  <video src="Demo.mp4" width="100%" controls autoplay loop muted></video>
+</div>
+
 This project was designed to help students learn by doing. Instead of traditional workshops, our role is to guide you as you collaborate through Discord and GitHub. Additionally, by working on this project together, you’ll also gain hands-on experience in coding, teamwork, and making documentation.
 
 Our end goal is to showcase the project in a final event where you can present your work, since it’s about building a project that demonstrates your skills and looks great on your resume, boosting your internship chances and paving the way for future Project Hubs. This year we got the opportunity to present at the ACM AI Convention 2026, the flagship event hosted by the ACM chapter at USF (University of South Florida). This is where many startups, companies, research labs, and student organizations around Tampa will come and showcase their best projects (and for some, job openings as well) utilizing AI to spark further interest and discussion about AI.
