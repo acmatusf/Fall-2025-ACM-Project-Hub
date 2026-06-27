@@ -4,7 +4,7 @@
 For this project hub, we built a gesture controlled robotic arm, which tracks your hand using your computer's camera and commands the arm to move accordingly. In this project, we used many technologies including computer vision/machine learning, inverse kinematics, Arduino programming, and a bit of 3D printing, CAD design, and circuit design.
 
 <div align="center">
-  <video src="Demo.mp4" width="100%" controls autoplay loop muted></video>
+  <video src="https://github.com/user-attachments/assets/1126486c-50d1-472d-870d-fecd58398877" width="100%" controls autoplay loop muted></video>
 </div>
 
 This project was designed to help students learn by doing. Instead of traditional workshops, our role is to guide you as you collaborate through Discord and GitHub. Additionally, by working on this project together, you’ll also gain hands-on experience in coding, teamwork, and making documentation.
